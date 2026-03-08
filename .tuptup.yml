@@ -1,10 +1,6 @@
 name: my-pipeline
 jobs:
-    image: oven/bun
+  - name: test
     commands:
       - ["bun", "install"]
       - ["bun", "test"]
-  - name: build
-    commands:
-      - ["bun", "install"]
-      - ["bun", "build"]
