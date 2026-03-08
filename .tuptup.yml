@@ -9,4 +9,4 @@ jobs:
     image: oven/bun
     commands:
       - ["bun", "install"]
-      - ["bun", "build"]
+      - ["bun", "build", "--outfile=bundle.js", "index.ts"]
