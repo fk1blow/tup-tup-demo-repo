@@ -5,7 +5,7 @@ jobs:
     commands:
       - ["bun", "install"]
       - ["bun", "test"]
-  - name: build
+  - name: test
     image: oven/bun
     commands:
       - ["bun", "install"]
