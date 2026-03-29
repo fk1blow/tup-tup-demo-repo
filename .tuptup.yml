@@ -1,12 +1,18 @@
 name: my-pipeline
 jobs:
-  - name: test
+  - name: install
     image: oven/bun:1.3.7
     commands:
       - ["bun", "install"]
-      - ["bun", "test"]
   - name: build
     image: oven/bun:1.3.7
     commands:
-      - ["bun", "install"]
       - ["bun", "run", "build"]
+    dependsOn:
+      - ["install"]
+  - name: test
+    image: oven/bun:1.3.7
+    commands:
+      - ["bun", "test"]
+    dependsOn:
+      - ["install"]
